@@ -8,5 +8,3 @@ RUN dnf -y install copr-distgit-client && \
 COPY ./konflux-fedora-rpms.ini /etc/copr-distgit-client/
 
 RUN chmod 0644 /etc/copr-distgit-client/konflux-fedora-rpms.ini
-
-USER mockbuilder
