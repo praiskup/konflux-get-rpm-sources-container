@@ -2,7 +2,7 @@
 
 FROM fedora:40
 
-RUN dnf -y install copr-distgit-client && \
+RUN dnf -y install copr-distgit-client python3-six && \
     dnf clean all
 
 COPY ./konflux-fedora-rpms.ini /etc/copr-distgit-client/
