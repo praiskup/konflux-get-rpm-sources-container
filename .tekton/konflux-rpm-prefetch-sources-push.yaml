@@ -10,11 +10,11 @@ metadata:
       == "main"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: konflux-rpm-prefetch-sources
-    appstudio.openshift.io/component: konflux-rpm-prefetch-sources
+    appstudio.openshift.io/application: fedora-on-konflux
+    appstudio.openshift.io/component: get-rpm-sources-container
     pipelines.appstudio.openshift.io/type: build
-  name: konflux-rpm-prefetch-sources-on-push
-  namespace: rhn-support-praiskup-tenant
+  name: get-rpm-sources-container-on-pull-push
+  namespace: praiskup-redhat-com-tenant
 spec:
   params:
   - name: dockerfile
@@ -22,7 +22,7 @@ spec:
   - name: git-url
     value: '{{source_url}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/rhn-support-praiskup-tenant/konflux-rpm-prefetch-sources/konflux-rpm-prefetch-sources:{{revision}}
+    value: quay.io/konflux-fedora/praiskup-redhat-com-tenant/get-rpm-sources-container:{{revision}}
   - name: path-context
     value: .
   - name: revision
